@@ -6,7 +6,14 @@ document.title = "Modifying the DOM";
 // OR
 document.body.style.backgroundColor = "#FF69B4";
 
-document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+function genRandRgbColor() {
+    return `rgb(
+        ${Math.floor(Math.random() * 256)}, 
+        ${Math.floor(Math.random() * 256)}, 
+        ${Math.floor(Math.random() * 256)})`;
+}
+
+document.body.style.backgroundColor = genRandRgbColor();
 
 for (const child of document.body.children) {
     console.log(child);
